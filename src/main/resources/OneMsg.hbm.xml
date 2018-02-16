@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.entity.OneMsg" table="one_msg">
+		<id name="msgId" column="one_msg_id" type="string"></id>
+		<property name="userIdSend" column="user_id_send" type="string"></property>
+		<property name="userIdTarget" column="user_id_target" type="string"></property>
+		<property name="body" column="one_msg_body" type="string"></property>
+		<property name="createTime" column="one_msg_create_time" type="long"></property>
+	</class>
+</hibernate-mapping>

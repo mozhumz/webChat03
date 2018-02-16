@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 处理请求路径 -->
+	<!-- 匹配/demo路径 -->
+	<package name="demo" namespace="/demo" extends="struts-default">
+		<!-- 配置请求与处理类 -->
+		<!-- 匹配/demo/hello请求 , 通过HelloAction的execute方法处理请求 -->
+		<action name="hello.do" class="cn.action.HelloAction">
+			<!-- execute方法返回success的时候 转发到 msg.jsp -->
+			<result name="success">
+				/login.jsp
+			</result>
+		</action>
+	</package>
+	<!-- 配置登录功能 -->
+	<package name="login"  extends="json-default">
+		<action name="login" class="userAction" method="login">
+			<result name="success" >
+				/chat.jsp
+			</result>
+			<result name="error" >
+				/login.jsp
+			</result>
+		</action>
+	</package>
+	<!-- 配置注册功能 -->
+	<package name="regist" extends="json-default">
+		<action name="regist" class="userAction" method="regist">
+			<result name="success">/login.jsp</result>
+			<result name="error">/regist.jsp</result>
+		</action>
+	</package>
+</struts>
