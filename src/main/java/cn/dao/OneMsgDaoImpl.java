@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import cn.entity.OneMsg;
 @Repository("oneMsgDao")
-@Transactional
+@Transactional  
 public class OneMsgDaoImpl implements OneMsgDao{
 	@Resource
 	private HibernateTemplate hibernateTemplate;
